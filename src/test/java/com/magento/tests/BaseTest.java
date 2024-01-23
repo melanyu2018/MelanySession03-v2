@@ -1,5 +1,6 @@
-package com.magento.utils;
+package com.magento.tests;
 
+import com.magento.pages.HomePage;
 import com.magento.pages.LoginPage;
 import com.magento.pages.RegisterPage;
 import org.openqa.selenium.Dimension;
@@ -15,16 +16,11 @@ public class BaseTest {
     protected static WebDriver driver;
     protected RegisterPage registerPage;
     protected LoginPage loginPage;
-
+    protected HomePage homePage;
     @BeforeMethod
     public void setup(){
         driver= new FirefoxDriver();//instanciando el objeto driver
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Variable.TIME_OUT));
-        driver.manage().window().maximize();
-        //driver.manage().window().setSize(new Dimension(1200,740));
-        driver.get(Variable.BASE_URL);
-
-        //pasando la instackia de driver creada en la linea 19 al POM
+        homePage= new HomePage(driver);
         registerPage=new RegisterPage(driver) ;
         loginPage=new LoginPage(driver);
 
@@ -33,7 +29,7 @@ public class BaseTest {
     @AfterMethod
     public void teardown(){
         if (driver!=null){
-            //driver.quit();
+            driver.quit();
         }
 
     }

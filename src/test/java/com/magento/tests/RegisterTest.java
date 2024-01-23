@@ -1,11 +1,9 @@
 package com.magento.tests;
 
 import com.github.javafaker.Faker;
-import com.magento.utils.BaseTest;
 import com.magento.utils.Variable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -30,10 +28,9 @@ public class RegisterTest extends BaseTest {
         String expected_message = "Account Information";
 
         //go to register page
-        registerPage.goToRegisterLink();
+        homePage.goToRegisterLink();
 
         //fills the form with fakedata
-        //registerPage.fillOutForm();
         registerPage.fillOutFormWithFakeData(faker.name().firstName(),faker.name().lastName(),email,password);
 
         //submit information

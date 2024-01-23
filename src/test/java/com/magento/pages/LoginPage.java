@@ -7,7 +7,7 @@ public class LoginPage {
     WebDriver driver;
 
     // Identificar los WebElementes
-    By linkSignIn= By.linkText("Sign In");
+
 
     By email=By.id("email");
     By pass=By.id("pass");
@@ -22,9 +22,6 @@ public class LoginPage {
 
     //Metodos o funciones
 
-    public void  goToSignInLink(){
-        driver.findElement(linkSignIn).click();
-    }
     public void fillOutFormLogin(){
         driver.findElement(email).sendKeys("perod343@gmail.com");
         driver.findElement(pass).sendKeys("2]H9N%S9q[Dk");

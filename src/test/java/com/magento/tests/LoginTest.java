@@ -1,24 +1,16 @@
 package com.magento.tests;
 
-import com.magento.utils.BaseTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class LoginTest extends BaseTest {
 
     @Test
-    public void loginForm(){
+    public void doLogin(){
 
         String expected_message="Account Information";
 
         // go to register page
-        loginPage.goToSignInLink();
+        homePage.goToSignInLink();
 
         //fill the form
         loginPage.fillOutFormLogin();
