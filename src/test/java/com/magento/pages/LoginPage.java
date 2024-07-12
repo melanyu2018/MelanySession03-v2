@@ -9,12 +9,6 @@ public class LoginPage {
     // Identificar los WebElementes
 
 
-    By email=By.id("email");
-    By pass=By.id("pass");
-
-    By buttonRegister = By.id("send2");
-
-
     // Constructor
     public LoginPage(WebDriver driver){// el drver sera pasado desde el Base test , en el metodo setUp
         this.driver=driver;
@@ -22,13 +16,5 @@ public class LoginPage {
 
     //Metodos o funciones
 
-    public void fillOutFormLogin(){
-        driver.findElement(email).sendKeys("perod343@gmail.com");
-        driver.findElement(pass).sendKeys("2]H9N%S9q[Dk");
-    }
-
-    public void submitData(){
-        driver.findElement(buttonRegister).submit();
-    }
 
 }

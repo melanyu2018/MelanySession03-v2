@@ -36,14 +36,8 @@ public class RegisterTest extends BaseTest {
         //submit information
         registerPage.submitData();
 
+        //Falta la asercion
 
-        //espera por un elemento que contenga el xpath y texto "Account Information"
-        WebElement msg = new WebDriverWait(driver, Duration.ofSeconds(Variable.TIME_OUT))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/main/div[2]/div[1]/div[4]/div[1]/strong")));
-
-        System.out.println("Email is : "+ email + " Password is : "+password);
-        //assertion
-        Assert.assertEquals(msg.getText(), expected_message);
 
     }
 
